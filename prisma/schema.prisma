@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Collection {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  coverImage  String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id           String     @id @default(uuid())
+  title        String
+  description  String?
+  materials    String?
+  images       String[]
+  isFeatured   Boolean    @default(false)
+  collectionId String
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Project {
+  id             String    @id @default(uuid())
+  title          String
+  slug           String    @unique
+  description    String?
+  m2Price        Float?
+  materials      String?
+  cncTechnique   String?
+  images         String[]
+  completionDate DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  phone     String?
+  email     String?
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  slug      String   @unique
+  category  String
+  dateText  String   // To match the current display format (e.g., "24 Şub")
+  excerpt   String?
+  content   String?  @db.Text
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CustomerReview {
+  id        String   @id @default(uuid())
+  author    String
+  email     String
+  location  String?
+  text      String   @db.Text
+  image     String?
+  rating    Int      @default(5)
+  isApproved Boolean  @default(false)
+  subscribeNewsletter Boolean @default(false)
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model JobApplication {
+  id              String   @id @default(uuid())
+  name            String
+  email           String
+  phone           String
+  applicationType String   // "job" or "internship"
+  desiredPosition String?
+  portfolioLink   String?
+  message         String   @db.Text
+  isRead          Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}

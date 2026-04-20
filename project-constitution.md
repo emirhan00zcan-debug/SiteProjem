@@ -1,0 +1,3 @@
+Bu projenin amacı, Sinop Özcan Mobilya'nın web sitesini yenilemektir. Web sitesi, mobilya koleksiyonlarını sergilemek, projeleri tanıtmak ve müşterilerle iletişimi kolaylaştırmak için tasarlanmıştır.
+https://evdxtjhdysrgnkvjiycq.supabase.co
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2ZHh0amhkeXNyZ25rdmppeWNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwOTU5NDAsImV4cCI6MjA4NzY3MTk0MH0.RwmoEtHUBOjPWjgWwJ-VpfyzVZ9IcKShsHcWdQLZeC4
