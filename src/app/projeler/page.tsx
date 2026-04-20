@@ -23,13 +23,13 @@ export default function LeadGenProjelerPage() {
     let result = [...projectsData];
 
     if (selectedCategories.length > 0) {
-      result = result.filter(p => selectedCategories.includes(p.category));
+      result = result.filter(p => p.category && selectedCategories.includes(p.category));
     }
     if (selectedMaterials.length > 0) {
       result = result.filter(p => p.material && selectedMaterials.includes(p.material!));
     }
     if (selectedStyles.length > 0) {
-      result = result.filter(p => selectedStyles.includes(p.style));
+      result = result.filter(p => p.style && selectedStyles.includes(p.style));
     }
 
     if (sortOption === 'name-asc') {
