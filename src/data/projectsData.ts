@@ -9,7 +9,6 @@ export interface Project {
   images: string[];
   m2Price: number;
   material?: string;       // Soru işareti: opsiyonel demek
-  materials?: string;      // Hata almamak için bunu da ekleyebilirsin
   style?: string;
   cncTechnique?: string;   // Aradığımız o meşhur teknik özellik!
 }

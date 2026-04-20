@@ -44,7 +44,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   // Varsayılan mock veriler (Özellik eksikse doldurmak için)
   const defaultDesc = "Bu özel üretim proje, mekanınızın ruhuna uygun, modern ve fonksiyonel bir yaklaşım ile tasarlanmıştır. Her detayı özenle düşünülmüş, kaliteli işçilik ön planda tutulmuştur.";
-  const fallbackMaterials = "1. Kalite MDF lam, Akrilik/Lake Kapak, Blum Menteşe Sistemleri";
+  const fallbackMaterial = "1. Kalite MDF lam, Akrilik/Lake Kapak, Blum Menteşe Sistemleri";
   const fallbackCnc = "Hassas milimetrik CNC kesim, 3D desen işleme ve kusursuz kenar bantlama (PVC)";
 
   return (
@@ -144,7 +144,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     <div>
                       <h4 className="font-semibold text-[var(--secondary-black)] text-lg">Kullanılan Malzeme</h4>
                       <p className="text-sm text-[var(--accent-grey)] mt-1.5 leading-relaxed">
-                        {project.material || fallbackMaterials}
+                        {project.material || fallbackMaterial}
                       </p>
                     </div>
                   </li>
