@@ -13,7 +13,7 @@ export default function LeadGenProjelerPage() {
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
   const [sortOption, setSortOption] = useState('newest');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-  
+
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProjectForLead, setSelectedProjectForLead] = useState<any>(null);
@@ -26,7 +26,7 @@ export default function LeadGenProjelerPage() {
       result = result.filter(p => selectedCategories.includes(p.category));
     }
     if (selectedMaterials.length > 0) {
-      result = result.filter(p => selectedMaterials.includes(p.material));
+      result = result.filter(p => p.material && selectedMaterials.includes(p.material!));
     }
     if (selectedStyles.length > 0) {
       result = result.filter(p => selectedStyles.includes(p.style));
@@ -57,7 +57,7 @@ export default function LeadGenProjelerPage() {
   return (
     <>
       <Navbar />
-      
+
       <main className="lead-projects-page">
         {/* Top Breadcrumb & Hero */}
         <section className="projects-hero-banner">
@@ -99,8 +99,8 @@ export default function LeadGenProjelerPage() {
                 <div className="filter-options">
                   {allCategories.map(cat => (
                     <label key={cat} className="custom-checkbox">
-                      <input 
-                        type="checkbox" 
+                      <input
+                        type="checkbox"
                         checked={selectedCategories.includes(cat)}
                         onChange={() => toggleFilter(cat, selectedCategories, setSelectedCategories)}
                       />
@@ -117,8 +117,8 @@ export default function LeadGenProjelerPage() {
                 <div className="filter-options">
                   {allMaterials.map(mat => (
                     <label key={mat} className="custom-checkbox">
-                      <input 
-                        type="checkbox" 
+                      <input
+                        type="checkbox"
                         checked={selectedMaterials.includes(mat)}
                         onChange={() => toggleFilter(mat, selectedMaterials, setSelectedMaterials)}
                       />
@@ -135,8 +135,8 @@ export default function LeadGenProjelerPage() {
                 <div className="filter-options">
                   {allStyles.map(st => (
                     <label key={st} className="custom-checkbox">
-                      <input 
-                        type="checkbox" 
+                      <input
+                        type="checkbox"
                         checked={selectedStyles.includes(st)}
                         onChange={() => toggleFilter(st, selectedStyles, setSelectedStyles)}
                       />
@@ -183,7 +183,7 @@ export default function LeadGenProjelerPage() {
                         <h2 className="project-title">{project.title}</h2>
                       </Link>
                       <p className="project-desc">{project.desc}</p>
-                      
+
                       <div className="project-tags">
                         <span>{project.material}</span>
                         <span>{project.style}</span>
@@ -193,7 +193,7 @@ export default function LeadGenProjelerPage() {
                         <button className="btn-lead" onClick={() => openLeadModal(project)}>
                           <i className="far fa-envelope"></i> Teklif Al
                         </button>
-                        <Link 
+                        <Link
                           href={`https://wa.me/905555555555?text=Merhaba, "${project.title}" projeniz hakkında detaylı bilgi almak ve görüntülü görüşme ayarlamak istiyorum.`}
                           target="_blank"
                           className="btn-meeting"
@@ -206,14 +206,14 @@ export default function LeadGenProjelerPage() {
                 ))}
               </div>
             ) : (
-                <div className="no-results-state">
-                  <i className="fas fa-filter no-results-icon"></i>
-                  <h3>Sonuç Bulunamadı</h3>
-                  <p>Seçtiğiniz filtrelere uygun bir tasarım bulunmuyor. Lütfen filtreleri değiştirerek tekrar deneyin.</p>
-                  <button className="clear-filters-btn" onClick={() => { setSelectedCategories([]); setSelectedMaterials([]); setSelectedStyles([]); }}>
-                    Tüm Filtreleri Temizle
-                  </button>
-                </div>
+              <div className="no-results-state">
+                <i className="fas fa-filter no-results-icon"></i>
+                <h3>Sonuç Bulunamadı</h3>
+                <p>Seçtiğiniz filtrelere uygun bir tasarım bulunmuyor. Lütfen filtreleri değiştirerek tekrar deneyin.</p>
+                <button className="clear-filters-btn" onClick={() => { setSelectedCategories([]); setSelectedMaterials([]); setSelectedStyles([]); }}>
+                  Tüm Filtreleri Temizle
+                </button>
+              </div>
             )}
           </div>
         </section>
@@ -233,10 +233,10 @@ export default function LeadGenProjelerPage() {
                 <h3>{selectedProjectForLead.title}</h3>
               </div>
             </div>
-            
+
             <div className="lead-modal-body">
               <p className="lead-modal-intro">Bu tasarım ilginizi çektiyse, mekan ölçülerinize ve tercihlerinize özel fiyat teklifimizi hazırlamak için formu doldurun.</p>
-              
+
               <form className="lead-form" onSubmit={(e) => { e.preventDefault(); alert('Teklif talebiniz başarıyla alınmıştır. Size en kısa sürede dönüş yapacağız.'); setIsModalOpen(false); }}>
                 <div className="form-row">
                   <div className="form-group">
