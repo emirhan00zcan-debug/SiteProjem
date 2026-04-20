@@ -1,72 +1,87 @@
+export interface Project {
+  id: string;
+  slug: string;
+  title: string;
+  desc: string;
+  category: string;
+  img: string;
+  imgHover: string;
+  images: string[];
+  m2Price: number;
+  material?: string;       // Soru işareti: opsiyonel demek
+  materials?: string;      // Hata almamak için bunu da ekleyebilirsin
+  style?: string;
+  cncTechnique?: string;   // Aradığımız o meşhur teknik özellik!
+}
 export const allCategories = ['Mutfak', 'Yatak Odası', 'Banyo', 'Portmanto / Antre', 'TV & Yaşam Ünitesi', 'Özel Tasarım', 'Gardırop & Dolap'];
 export const allMaterials = ['Masif Ahşap', 'Lake', 'MDF Lam', 'High Gloss', 'Akrilik'];
 export const allStyles = ['Modern', 'Klasik', 'Avangard', 'Minimalist', 'Endüstriyel'];
 
-export const projectsData = [
+export const projectsData: Project[] = [
   // MUTFAK PROJELERİ
-  { 
-    id: 'pro-m1', slug: 'ada-mutfak-konsepti', title: 'Ada Mutfak Konsepti', desc: 'Şık ve ferah ada mutfak tasarımı.', category: 'Mutfak', material: 'Lake', style: 'Modern', 
-    img: '/assets/images/temiz/kitchen-island-pro-mockup.png', imgHover: '/assets/images/temiz/kitchen-island-pro-mockup.png', 
-    images: ['/assets/images/temiz/kitchen-island-pro-mockup.png'], m2Price: 8500 
+  {
+    id: 'pro-m1', slug: 'ada-mutfak-konsepti', title: 'Ada Mutfak Konsepti', desc: 'Şık ve ferah ada mutfak tasarımı.', category: 'Mutfak', material: 'Lake', style: 'Modern',
+    img: '/assets/images/temiz/kitchen-island-pro-mockup.png', imgHover: '/assets/images/temiz/kitchen-island-pro-mockup.png',
+    images: ['/assets/images/temiz/kitchen-island-pro-mockup.png'], m2Price: 8500
   },
-  { 
-    id: 'pro-m3', slug: 'klasik-mutfak-tasarimi', title: 'Klasik Mutfak Tasarımı 3', desc: 'Zamansız klasik detaylarla mutfak ahşap şıklığı.', category: 'Mutfak', material: 'MDF Lam', style: 'Klasik', 
-    img: '/assets/images/temiz/pro-mutfak-3.png', imgHover: '/assets/images/temiz/pro-mutfak-3.png', 
-    images: ['/assets/images/temiz/pro-mutfak-3.png'], m2Price: 7200 
+  {
+    id: 'pro-m3', slug: 'klasik-mutfak-tasarimi', title: 'Klasik Mutfak Tasarımı 3', desc: 'Zamansız klasik detaylarla mutfak ahşap şıklığı.', category: 'Mutfak', material: 'MDF Lam', style: 'Klasik',
+    img: '/assets/images/temiz/pro-mutfak-3.png', imgHover: '/assets/images/temiz/pro-mutfak-3.png',
+    images: ['/assets/images/temiz/pro-mutfak-3.png'], m2Price: 7200
   },
-  { 
-    id: 'pro-m6', slug: 'modern-mutfak-6', title: 'Modern Mutfak 6', desc: 'Açık renklerin ferahlık katan etkisi.', category: 'Mutfak', material: 'Lake', style: 'Minimalist', 
-    img: '/assets/images/temiz/pro-mutfak-6.png', imgHover: '/assets/images/temiz/pro-mutfak-6.png', 
-    images: ['/assets/images/temiz/pro-mutfak-6.png'], m2Price: 7800 
+  {
+    id: 'pro-m6', slug: 'modern-mutfak-6', title: 'Modern Mutfak 6', desc: 'Açık renklerin ferahlık katan etkisi.', category: 'Mutfak', material: 'Lake', style: 'Minimalist',
+    img: '/assets/images/temiz/pro-mutfak-6.png', imgHover: '/assets/images/temiz/pro-mutfak-6.png',
+    images: ['/assets/images/temiz/pro-mutfak-6.png'], m2Price: 7800
   },
-  { 
-    id: 'pro-m7', slug: 'luks-mutfak-7', title: 'Lüks Mutfak Tasarımı 7', desc: 'Premium dolap ve tezgah kombinasyonu.', category: 'Mutfak', material: 'High Gloss', style: 'Modern', 
-    img: '/assets/images/temiz/pro-mutfak-7.png', imgHover: '/assets/images/temiz/pro-mutfak-7.png', 
-    images: ['/assets/images/temiz/pro-mutfak-7.png'], m2Price: 9500 
+  {
+    id: 'pro-m7', slug: 'luks-mutfak-7', title: 'Lüks Mutfak Tasarımı 7', desc: 'Premium dolap ve tezgah kombinasyonu.', category: 'Mutfak', material: 'High Gloss', style: 'Modern',
+    img: '/assets/images/temiz/pro-mutfak-7.png', imgHover: '/assets/images/temiz/pro-mutfak-7.png',
+    images: ['/assets/images/temiz/pro-mutfak-7.png'], m2Price: 9500
   },
-  { 
-    id: 'pro-m11', slug: 'genis-mutfak-11', title: 'Geniş İç Hacimli Mutfak 11', desc: 'Bol depolama alanı.', category: 'Mutfak', material: 'Akrilik', style: 'Modern', 
-    img: '/assets/images/temiz/pro-mutfak-11.png', imgHover: '/assets/images/temiz/pro-mutfak-11.png', 
-    images: ['/assets/images/temiz/pro-mutfak-11.png'], m2Price: 8900 
+  {
+    id: 'pro-m11', slug: 'genis-mutfak-11', title: 'Geniş İç Hacimli Mutfak 11', desc: 'Bol depolama alanı.', category: 'Mutfak', material: 'Akrilik', style: 'Modern',
+    img: '/assets/images/temiz/pro-mutfak-11.png', imgHover: '/assets/images/temiz/pro-mutfak-11.png',
+    images: ['/assets/images/temiz/pro-mutfak-11.png'], m2Price: 8900
   },
 
   // MULTI-VIEW MUTFAK/DOLAP PROJELERİ
-  { 
-    id: 'pro-rek3', slug: 'ledli-kose-mutfak', title: 'Gömme Ledli Köşe Tasarım', desc: 'Özel aydınlatmalı ve kullanışlı köşe tasarımı.', category: 'Mutfak', material: 'Lake', style: 'Modern', 
-    img: '/assets/images/temiz/reklam3_karsidan_cekim.png', imgHover: '/assets/images/temiz/reklam3_duzeltilmis_isik.png', 
-    images: ['/assets/images/temiz/reklam3_karsidan_cekim.png', '/assets/images/temiz/reklam3_duzeltilmis_isik.png'], m2Price: 7400 
+  {
+    id: 'pro-rek3', slug: 'ledli-kose-mutfak', title: 'Gömme Ledli Köşe Tasarım', desc: 'Özel aydınlatmalı ve kullanışlı köşe tasarımı.', category: 'Mutfak', material: 'Lake', style: 'Modern',
+    img: '/assets/images/temiz/reklam3_karsidan_cekim.png', imgHover: '/assets/images/temiz/reklam3_duzeltilmis_isik.png',
+    images: ['/assets/images/temiz/reklam3_karsidan_cekim.png', '/assets/images/temiz/reklam3_duzeltilmis_isik.png'], m2Price: 7400
   },
-  { 
-    id: 'pro-rek4', slug: 'genis-tezgahli-mutfak', title: 'Geniş Tezgahlı Endüstriyel Mutfak', desc: 'Geniş çalışma alanına sahip koyu/açık tonlu sistem.', category: 'Mutfak', material: 'Mat MDF', style: 'Endüstriyel', 
-    img: '/assets/images/temiz/reklam_4_bos_tezgah - Kopya.png', imgHover: '/assets/images/temiz/reklam_4_sagdan_bos.png', 
-    images: ['/assets/images/temiz/reklam_4_bos_tezgah - Kopya.png', '/assets/images/temiz/reklam_4_sagdan_bos.png'], m2Price: 8100 
+  {
+    id: 'pro-rek4', slug: 'genis-tezgahli-mutfak', title: 'Geniş Tezgahlı Endüstriyel Mutfak', desc: 'Geniş çalışma alanına sahip koyu/açık tonlu sistem.', category: 'Mutfak', material: 'Mat MDF', style: 'Endüstriyel',
+    img: '/assets/images/temiz/reklam_4_bos_tezgah - Kopya.png', imgHover: '/assets/images/temiz/reklam_4_sagdan_bos.png',
+    images: ['/assets/images/temiz/reklam_4_bos_tezgah - Kopya.png', '/assets/images/temiz/reklam_4_sagdan_bos.png'], m2Price: 8100
   },
-  { 
-    id: 'pro-rek-acisi', slug: 'yan-ada-mutfak', title: 'Açılı Özel Tasarım Mutfak', desc: 'Ergonomik açılı yapı ve şık tezgah.', category: 'Mutfak', material: 'Lake', style: 'Modern', 
-    img: '/assets/images/temiz/reklam_acisi_sag.png', imgHover: '/assets/images/temiz/reklam_acisi_sol.png', 
-    images: ['/assets/images/temiz/reklam_acisi_sag.png', '/assets/images/temiz/reklam_acisi_sol.png'], m2Price: 8800 
+  {
+    id: 'pro-rek-acisi', slug: 'yan-ada-mutfak', title: 'Açılı Özel Tasarım Mutfak', desc: 'Ergonomik açılı yapı ve şık tezgah.', category: 'Mutfak', material: 'Lake', style: 'Modern',
+    img: '/assets/images/temiz/reklam_acisi_sag.png', imgHover: '/assets/images/temiz/reklam_acisi_sol.png',
+    images: ['/assets/images/temiz/reklam_acisi_sag.png', '/assets/images/temiz/reklam_acisi_sol.png'], m2Price: 8800
   },
 
   // DOLAPLAR (WARDROBE, REFRIGERATOR MOCKUPS)
-  { 
-    id: 'pro-ward5', slug: 'sik-gardirop-model-5', title: 'Şık Gardırop Model 5', desc: '3 farklı açıdan: Kapalı, açılı ve iç modül beyaz pürüzsüz görünüm.', category: 'Gardırop & Dolap', material: 'Lake', style: 'Avangard', 
-    img: '/assets/images/temiz/5_wardrobe_straight_closed.png', imgHover: '/assets/images/temiz/5_wardrobe_straight_open.png', 
-    images: ['/assets/images/temiz/5_wardrobe_straight_closed.png', '/assets/images/temiz/5_wardrobe_angled_closed.png', '/assets/images/temiz/5_wardrobe_straight_open.png'], m2Price: 7800 
+  {
+    id: 'pro-ward5', slug: 'sik-gardirop-model-5', title: 'Şık Gardırop Model 5', desc: '3 farklı açıdan: Kapalı, açılı ve iç modül beyaz pürüzsüz görünüm.', category: 'Gardırop & Dolap', material: 'Lake', style: 'Avangard',
+    img: '/assets/images/temiz/5_wardrobe_straight_closed.png', imgHover: '/assets/images/temiz/5_wardrobe_straight_open.png',
+    images: ['/assets/images/temiz/5_wardrobe_straight_closed.png', '/assets/images/temiz/5_wardrobe_angled_closed.png', '/assets/images/temiz/5_wardrobe_straight_open.png'], m2Price: 7800
   },
-  { 
-    id: 'pro-ward1', slug: 'minimalist-beyaz-gardirop', title: 'Minimalist Beyaz Gardırop', desc: 'Tamamı beyaz, pürüzsüz yüzey ve beyaz iç tasarımlı dolap.', category: 'Gardırop & Dolap', material: 'MDF Lam', style: 'Minimalist', 
-    img: '/assets/images/temiz/wardrobe_front_closed_1776678972128.png', imgHover: '/assets/images/temiz/wardrobe_front_open_white_1776679002782.png', 
-    images: ['/assets/images/temiz/wardrobe_front_closed_1776678972128.png', '/assets/images/temiz/wardrobe_angled_closed_1776678986831.png', '/assets/images/temiz/wardrobe_front_open_white_1776679002782.png'], m2Price: 5900 
+  {
+    id: 'pro-ward1', slug: 'minimalist-beyaz-gardirop', title: 'Minimalist Beyaz Gardırop', desc: 'Tamamı beyaz, pürüzsüz yüzey ve beyaz iç tasarımlı dolap.', category: 'Gardırop & Dolap', material: 'MDF Lam', style: 'Minimalist',
+    img: '/assets/images/temiz/wardrobe_front_closed_1776678972128.png', imgHover: '/assets/images/temiz/wardrobe_front_open_white_1776679002782.png',
+    images: ['/assets/images/temiz/wardrobe_front_closed_1776678972128.png', '/assets/images/temiz/wardrobe_angled_closed_1776678986831.png', '/assets/images/temiz/wardrobe_front_open_white_1776679002782.png'], m2Price: 5900
   },
-  { 
-    id: 'pro-dolap6', slug: 'ozel-buzdolabi-gardirop-6', title: 'Özel Tasarım Dolap Serisi 6', desc: 'Boy dolap formu, gizli kulp ve aydınlık iç hacim.', category: 'Gardırop & Dolap', material: 'Lake', style: 'Modern', 
-    img: '/assets/images/temiz/6_karsi.png', imgHover: '/assets/images/temiz/6_karsi_ic_beyaz.png', 
-    images: ['/assets/images/temiz/6_karsi.png', '/assets/images/temiz/6_farkli_aci.png', '/assets/images/temiz/6_karsi_ic_beyaz.png'], m2Price: 6500 
+  {
+    id: 'pro-dolap6', slug: 'ozel-buzdolabi-gardirop-6', title: 'Özel Tasarım Dolap Serisi 6', desc: 'Boy dolap formu, gizli kulp ve aydınlık iç hacim.', category: 'Gardırop & Dolap', material: 'Lake', style: 'Modern',
+    img: '/assets/images/temiz/6_karsi.png', imgHover: '/assets/images/temiz/6_karsi_ic_beyaz.png',
+    images: ['/assets/images/temiz/6_karsi.png', '/assets/images/temiz/6_farkli_aci.png', '/assets/images/temiz/6_karsi_ic_beyaz.png'], m2Price: 6500
   },
-  { 
-    id: 'pro-rek2', slug: 'boy-aydali-gardirop', title: 'Aynalı Kompakt Dolap', desc: 'Geniş ayna kapaklı ve ferah iç depolama.', category: 'Gardırop & Dolap', material: 'High Gloss', style: 'Minimalist', 
-    img: '/assets/images/temiz/reklam2_temiz_ayna.png', imgHover: '/assets/images/temiz/reklam2_kapaklar_acik_ayni_dolap.png', 
-    images: ['/assets/images/temiz/reklam2_temiz_ayna.png', '/assets/images/temiz/reklam2_kapaklar_acik_ayni_dolap.png'], m2Price: 6200 
+  {
+    id: 'pro-rek2', slug: 'boy-aydali-gardirop', title: 'Aynalı Kompakt Dolap', desc: 'Geniş ayna kapaklı ve ferah iç depolama.', category: 'Gardırop & Dolap', material: 'High Gloss', style: 'Minimalist',
+    img: '/assets/images/temiz/reklam2_temiz_ayna.png', imgHover: '/assets/images/temiz/reklam2_kapaklar_acik_ayni_dolap.png',
+    images: ['/assets/images/temiz/reklam2_temiz_ayna.png', '/assets/images/temiz/reklam2_kapaklar_acik_ayni_dolap.png'], m2Price: 6200
   },
 
   // YATAK ODASI PROJELERİ

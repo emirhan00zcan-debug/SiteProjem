@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
-  
+
   if (!slug) {
     notFound();
   }
@@ -46,13 +46,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const defaultDesc = "Bu özel üretim proje, mekanınızın ruhuna uygun, modern ve fonksiyonel bir yaklaşım ile tasarlanmıştır. Her detayı özenle düşünülmüş, kaliteli işçilik ön planda tutulmuştur.";
   const fallbackMaterials = "1. Kalite MDF lam, Akrilik/Lake Kapak, Blum Menteşe Sistemleri";
   const fallbackCnc = "Hassas milimetrik CNC kesim, 3D desen işleme ve kusursuz kenar bantlama (PVC)";
-  
+
   return (
     <>
       <Navbar />
       <main className="min-h-screen bg-[var(--light-bg)] pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Breadcrumb */}
           <nav className="flex items-center text-sm text-[var(--accent-grey)] mb-10" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--primary-teal)] transition-colors font-medium">Ana Sayfa</Link>
@@ -63,7 +63,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-            
+
             {/* Sol Kolon: Galeri (Trendyol Layout) */}
             <div className="lg:col-span-7 h-full">
               <ProjectGallery images={project.images} title={project.title} />
@@ -71,7 +71,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
             {/* Sağ Kolon: Proje Bilgi Paneli */}
             <div className="lg:col-span-5 flex flex-col space-y-8">
-              
+
               <div className="border-b border-gray-200 pb-6 relative">
                 <div className="absolute -top-6 -left-6 w-20 h-20 bg-[var(--primary-teal)] opacity-5 rounded-full blur-2xl z-0"></div>
                 <h1 className="text-4xl sm:text-5xl font-bold text-[var(--secondary-black)] tracking-tight mb-4 relative z-10 font-serif">
@@ -95,17 +95,17 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                       {project.m2Price && <span className="text-[var(--accent-grey)] font-medium">/ m²</span>}
                     </div>
                   </div>
-                  
+
                   {/* Örnek Hesaplama */}
                   {project.m2Price ? (
                     <div className="bg-gray-50/80 p-4 rounded-xl border border-gray-100/80 w-full sm:w-auto relative overflow-hidden group">
                       <div className="absolute top-0 right-0 w-16 h-16 bg-[var(--primary-teal)] opacity-5 rounded-bl-full transition-transform group-hover:scale-150"></div>
                       <p className="text-xs text-[var(--accent-grey)] font-bold tracking-wide uppercase mb-1">Görseldeki Proje (~12 m²)</p>
                       <div className="flex items-baseline gap-2 pb-1">
-                         <span className="text-2xl font-bold text-[var(--primary-teal)]">
-                           ₺{(project.m2Price * 12).toLocaleString('tr-TR')}
-                         </span>
-                         <span className="text-xs text-[var(--accent-grey)] font-medium">örnek fiyat</span>
+                        <span className="text-2xl font-bold text-[var(--primary-teal)]">
+                          ₺{(project.m2Price * 12).toLocaleString('tr-TR')}
+                        </span>
+                        <span className="text-xs text-[var(--accent-grey)] font-medium">örnek fiyat</span>
                       </div>
                     </div>
                   ) : (
@@ -123,7 +123,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   <div>
                     <h4 className="text-sm font-bold text-[var(--secondary-black)] mb-1">Evinizin Ölçülerine Özel Üretim</h4>
                     <p className="text-xs text-[var(--accent-grey)] leading-relaxed">
-                      Değerlendirdiğiniz model, mekana özel olarak milimetrik hesaplanmaktadır. 
+                      Değerlendirdiğiniz model, mekana özel olarak milimetrik hesaplanmaktadır.
                       <strong className="text-[var(--primary-teal)] font-medium ml-1">Kendi ölçülerinize göre en doğru fiyatı almak için bizimle iletişime geçin.</strong>
                     </p>
                   </div>
@@ -135,7 +135,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--secondary-black)] mb-6">
                   Teknik Spesifikasyonlar
                 </h3>
-                
+
                 <ul className="space-y-6">
                   <li className="flex gap-5 group">
                     <div className="mt-1 bg-opacity-10 transition-colors p-3 rounded-xl" style={{ backgroundColor: 'rgba(0, 90, 100, 0.05)', color: 'var(--primary-teal)' }}>
@@ -144,7 +144,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     <div>
                       <h4 className="font-semibold text-[var(--secondary-black)] text-lg">Kullanılan Malzeme</h4>
                       <p className="text-sm text-[var(--accent-grey)] mt-1.5 leading-relaxed">
-                        {project.materials || fallbackMaterials}
+                        {project.material || fallbackMaterials}
                       </p>
                     </div>
                   </li>
@@ -177,8 +177,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
               {/* CTA Butonları */}
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/iletisim" 
+                <Link
+                  href="/iletisim"
                   className="flex-1 text-white text-center py-[1.15rem] rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1"
                   style={{ backgroundColor: 'var(--primary-teal)', boxShadow: '0 10px 20px rgba(0, 90, 100, 0.2)' }}
                 >
