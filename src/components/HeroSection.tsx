@@ -7,7 +7,7 @@ const HeroSection = () => {
 
     const slides = [
         {
-            bgImage: "url(/assets/premium-kitchen-2.png)",
+            bgImage: "url(assets/premium-kitchen-2.png)",
             tag: "⚡ KOMİSYONSUZ FİYATLAR ⚡",
             title: "Mağaza Komisyonu Yok! \n Doğrudan Atölye Fiyatı.",
             description: "Aracıları tamamen kaldırdık! Tüm mutfak ve dolap siparişlerinizde showroom maliyeti ödemeden, %25 net imalat indirimiyle birinci sınıf kaliteyi doğrudan üreticiden alın.",
@@ -23,7 +23,7 @@ const HeroSection = () => {
             isSpecial: true
         },
         {
-            bgImage: "url(/assets/insaat-proje.png)",
+            bgImage: "url(assets/insaat-proje.png)",
             tag: "İNŞAATÇILARA ÖZEL",
             title: "Projelerinize Üretici \n Gücüyle Değer Katın.",
             description: "Toplu konut ve inşaat projelerinde zamana sadık montaj ve projeye özel %40'a varan indirimler. Zamanında teslim, fabrika fiyatı.",
