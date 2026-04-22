@@ -65,7 +65,7 @@ const HeroSection = () => {
             ]
         },
         {
-            bgImage: "url('/assets/pro-mutfak-3.png')",
+            bgImage: "url('/assets/pro-mutfa.png')",
             tag: "GURME MUTFAKLAR",
             title: "Hayalinizdeki \n Mutfak",
             description: "Fonksiyonel detaylar ve şık çizgilerle mutfakta geçirdiğiniz her anı keyfe dönüştürün.",
