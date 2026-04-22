@@ -1,0 +1,6 @@
+Amaç her bir ürün için 4 tane aynı ortam ve aynı koşullarda sadece farklı açılardan fotolar üretmek ve bunları mockup lı yapmak. 
+Açılar şu şekilde: bir fotonun orijinal hali + 45 derece sağa + 45 derece sola. eğer foto karşıdan değil de yandan çekilmişse o zaman da tam karşıdan tüm ürünü alacak şekilde bir fotoğraf üret bir de hangi taraftan çekilmişse foto onun tam tersi yönden de bir fotoğraf üret. yani toplamda 3 fotoğraf üretilecek. ekstra olarak her bir ürünün kapağı açılmış halinden de 1 fotoğraf üreteceksin totalde 4 fotoğraf üretilecek. 
+üretilecek olan tüm resimlerdeki mobilyaların kapaklarının içerisi kapak rengi ile aynı renkte  olacak şekilde üretilsin -yani raflar ve iç sunta rengi kapak rengi olsun- Ancak bunu yaparken mobilyanın kendi tasarım ve rengini değiştirmeden yap sadece içerinin tasarımı bu şekilde olsun kapak rengi ne ise içerisinin ve rafların rengi de o olsun . kapakların iç kısımları daima kapak rengi olsun. ürünü asla değiştirme bu versiyonunu yaparken.
+Bu nedenle her bir ürün için dört farklı açıdan fotoğraf üretilip mockup lı yapılmalı. 
+Bu işlem için her bir ürün için dört farklı açıdan fotoğraf üretilip mockup lı yapılmalı.     
+ardından her bir ürüne özel onun adında klasör oluşturup ürünün fotolarını o klasörün içine kaydet. 
