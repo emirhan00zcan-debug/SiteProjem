@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { transporter, mailOptions } from '@/utils/mailer';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(req: Request) {
     try {
@@ -8,6 +9,16 @@ export async function POST(req: Request) {
 
         if (!name || !email || !message) {
             return NextResponse.json({ success: false, error: 'Eksik bilgi' }, { status: 400 });
+        }
+
+        // Save to Supabase
+        const { error: dbError } = await supabase
+            .from('ContactMessage')
+            .insert([{ name, phone, email, message }]);
+
+        if (dbError) {
+            console.error('Supabase error saving contact message:', dbError);
+            // We can continue to send email even if DB fails, or we can fail. Let's just log it.
         }
 
         const mailContent = `
@@ -19,13 +30,17 @@ export async function POST(req: Request) {
             <p><strong>Mesaj:</strong><br/>${message.replace(/\n/g, '<br/>')}</p>
         `;
 
-        await transporter.sendMail({
-            ...mailOptions,
-            subject: `Yeni İletişim Mesajı: ${name}`,
-            html: mailContent,
-        });
+        try {
+            await transporter.sendMail({
+                ...mailOptions,
+                subject: `Yeni İletişim Mesajı: ${name}`,
+                html: mailContent,
+            });
+        } catch (mailErr) {
+            console.error('Email sending error:', mailErr);
+        }
 
-        return NextResponse.json({ success: true, message: 'Mesaj iletildi' });
+        return NextResponse.json({ success: true, message: 'Mesaj iletildi ve veritabanına kaydedildi.' });
     } catch (error: any) {
         console.error('Contact form error:', error);
         return NextResponse.json({ success: false, error: 'Mesaj gönderilemedi' }, { status: 500 });

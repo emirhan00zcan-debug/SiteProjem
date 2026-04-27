@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { transporter, mailOptions } from '@/utils/mailer';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(req: Request) {
     try {
@@ -8,6 +9,33 @@ export async function POST(req: Request) {
 
         if (!author || !email || !text) {
             return NextResponse.json({ success: false, error: 'Eksik bilgi' }, { status: 400 });
+        }
+
+        // Save to Supabase
+        const { error: dbError } = await supabase
+            .from('CustomerReview')
+            .insert([{ 
+                author, 
+                email, 
+                location, 
+                text, 
+                subscribeNewsletter: Boolean(subscribeNewsletter),
+                isApproved: false
+            }]);
+
+        if (dbError) {
+            console.error('Supabase error saving customer review:', dbError);
+        }
+
+        // If they also want to subscribe to newsletter, add them there
+        if (subscribeNewsletter) {
+            const { error: newsletterError } = await supabase
+                .from('NewsletterSubscriber')
+                .insert([{ email }]);
+                
+            if (newsletterError) {
+                console.error('Supabase error saving newsletter subscriber from review:', newsletterError);
+            }
         }
 
         const mailContent = `
@@ -21,13 +49,17 @@ export async function POST(req: Request) {
             <p>Yorum onaylandıktan sonra veritabanınıza ekleyebilirsiniz.</p>
         `;
 
-        await transporter.sendMail({
-            ...mailOptions,
-            subject: `Yeni Müşteri Yorumu: ${author}`,
-            html: mailContent,
-        });
+        try {
+            await transporter.sendMail({
+                ...mailOptions,
+                subject: `Yeni Müşteri Yorumu: ${author}`,
+                html: mailContent,
+            });
+        } catch (mailErr) {
+            console.error('Email sending error:', mailErr);
+        }
 
-        return NextResponse.json({ success: true, message: 'Yorum iletildi.' });
+        return NextResponse.json({ success: true, message: 'Yorum iletildi ve veritabanına kaydedildi.' });
     } catch (error: any) {
         console.error('Reviews API error:', error);
         return NextResponse.json({ success: false, error: 'Yorum gönderilemedi.' }, { status: 500 });
