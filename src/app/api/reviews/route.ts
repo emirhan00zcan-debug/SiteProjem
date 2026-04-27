@@ -15,6 +15,7 @@ export async function POST(req: Request) {
         const { error: dbError } = await supabase
             .from('CustomerReview')
             .insert([{ 
+                id: crypto.randomUUID(),
                 author, 
                 email, 
                 location, 
@@ -31,7 +32,7 @@ export async function POST(req: Request) {
         if (subscribeNewsletter) {
             const { error: newsletterError } = await supabase
                 .from('NewsletterSubscriber')
-                .insert([{ email }]);
+                .insert([{ id: crypto.randomUUID(), email }]);
                 
             if (newsletterError) {
                 console.error('Supabase error saving newsletter subscriber from review:', newsletterError);

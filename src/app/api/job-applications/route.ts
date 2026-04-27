@@ -15,6 +15,7 @@ export async function POST(req: Request) {
         const { error: dbError } = await supabase
             .from('JobApplication')
             .insert([{ 
+                id: crypto.randomUUID(),
                 name, 
                 phone, 
                 email, 

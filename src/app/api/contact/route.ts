@@ -14,7 +14,7 @@ export async function POST(req: Request) {
         // Save to Supabase
         const { error: dbError } = await supabase
             .from('ContactMessage')
-            .insert([{ name, phone, email, message }]);
+            .insert([{ id: crypto.randomUUID(), name, phone, email, message }]);
 
         if (dbError) {
             console.error('Supabase error saving contact message:', dbError);
