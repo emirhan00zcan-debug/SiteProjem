@@ -1,12 +1,16 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 import { allCategories, allMaterials, allStyles, projectsData } from '@/data/projectsData';
 
-export default function LeadGenProjelerPage() {
+function ProjectsContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
@@ -17,6 +21,33 @@ export default function LeadGenProjelerPage() {
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProjectForLead, setSelectedProjectForLead] = useState<any>(null);
+
+  // Initialize category from URL parameter
+  useEffect(() => {
+    if (categoryParam) {
+      // Map the URL param to the actual category name
+      const categoryMap: { [key: string]: string } = {
+        'mutfak': 'Mutfak',
+        'yatak-odasi': 'Yatak Odası',
+        'yasam-alani': 'TV & Yaşam Ünitesi',
+        'banyo': 'Banyo',
+        'vestiyer': 'Portmanto / Antre',
+        'ozel-tasarim': 'Özel Tasarım',
+        'gardirop': 'Gardırop & Dolap',
+        'tv': 'TV & Yaşam Ünitesi',
+        'cocuk': 'Yatak Odası',
+        'calisma': 'Özel Tasarım',
+        'kutuphane': 'Özel Tasarım',
+        'giyim': 'Gardırop & Dolap',
+        'ray': 'Gardırop & Dolap'
+      };
+      
+      const mappedCategory = categoryMap[categoryParam.toLowerCase()];
+      if (mappedCategory && !selectedCategories.includes(mappedCategory)) {
+        setSelectedCategories([mappedCategory]);
+      }
+    }
+  }, [categoryParam]);
 
   // Filter Logic
   useEffect(() => {
@@ -273,3 +304,12 @@ export default function LeadGenProjelerPage() {
     </>
   );
 }
+
+export default function LeadGenProjelerPage() {
+  return (
+    <Suspense fallback={<div>Yükleniyor...</div>}>
+      <ProjectsContent />
+    </Suspense>
+  );
+}
+

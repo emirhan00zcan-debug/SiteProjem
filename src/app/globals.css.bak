@@ -2054,12 +2054,11 @@ footer {
 }
 
 .section-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    line-height: 1.2;
+    color: #D4AF37; !important;
     margin-bottom: 1.5rem;
-    color: var(--secondary-black);
-}
+    font-family: Playfair Display, serif;
+    font-size: 3rem;
+    line-height: 1.2;}
 
 .text-rich {
     font-size: 1.05rem;
@@ -2369,7 +2368,7 @@ footer {
     margin-bottom: 2rem;
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    color: #D4AF37;
+    color: #D4AF37; 
 }
 
 .form-group {

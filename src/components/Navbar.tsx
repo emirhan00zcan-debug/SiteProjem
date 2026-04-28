@@ -54,7 +54,7 @@ const Navbar = () => {
                 <div className="top-bar-content">
                     <div className="top-contact">
                         <span><i className="fas fa-phone"></i> <a href="tel:+903682604885" style={{ color: 'inherit', textDecoration: 'none' }}>+90 368 260 48 85</a></span>
-                        <span><i className="fas fa-envelope"></i> info@ozcanmobilya.com</span>
+                        <span><i className="fas fa-envelope"></i> ozcan.mobilya.sinop@gmail.com</span>
                     </div>
                     <div className="top-social">
                         <a href="https://www.instagram.com/sinop_ozcan_mobilya/" target="_blank" rel="noopener noreferrer">
@@ -97,35 +97,7 @@ const Navbar = () => {
                             </div>
                         </li>
 
-                        <li className="has-mega-menu" style={{ position: 'relative' }}>
-                            <Link href="/taahhutlerimiz">Taahhütlerimiz <i className="fas fa-chevron-down"></i></Link>
-                            <div className="mega-menu" style={{ padding: '2rem', width: '500px', left: '-150px' }}>
-                                <div className="mega-menu-content" style={{ gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                                    <div className="mega-column">
-                                        <div className="mega-category-item" style={{ marginBottom: 0 }}>
-                                            <ul>
-                                                <li><Link href="/taahhutlerimiz/mobilya"><i className="fas fa-couch"></i> Mobilya</Link></li>
-                                                <li><Link href="/taahhutlerimiz/mutfak"><i className="fas fa-utensils"></i> Mutfak</Link></li>
-                                                <li><Link href="/taahhutlerimiz/yatak-odasi"><i className="fas fa-bed"></i> Yatak Odası</Link></li>
-                                                <li><Link href="/taahhutlerimiz/cocuk-odasi"><i className="fas fa-child"></i> Çocuk Odası</Link></li>
-                                                <li><Link href="/taahhutlerimiz/giyinme-odasi"><i className="fas fa-tshirt"></i> Giyinme Odası</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="mega-column">
-                                         <div className="mega-category-item" style={{ marginBottom: 0 }}>
-                                            <ul>
-                                                <li><Link href="/taahhutlerimiz/portmanto"><i className="fas fa-door-closed"></i> Portmanto</Link></li>
-                                                <li><Link href="/taahhutlerimiz/tv-unitesi"><i className="fas fa-tv"></i> TV Ünitesi</Link></li>
-                                                <li><Link href="/taahhutlerimiz/dresuar-ayna"><i className="fas fa-border-all"></i> Dresuar & Ayna</Link></li>
-                                                <li><Link href="/taahhutlerimiz/fayans-uygulama"><i className="fas fa-hammer"></i> Fayans Uygulama</Link></li>
-                                                <li><Link href="/taahhutlerimiz/elektrik-su-tamirat"><i className="fas fa-tools"></i> Elektrik, Su</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                   
 
                         <li className="has-mega-menu">
                             <Link href="/projeler">Projelerimiz <i className="fas fa-chevron-down"></i></Link>

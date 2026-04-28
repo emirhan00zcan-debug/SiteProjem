@@ -153,7 +153,6 @@ const categoryData: Record<string, { name: string, icon: string, image: string, 
 };
 
 export default function CategoryPage({ params }: { params: { category: string } }) {
-    // Unwrap params in React 18 / Next 14 compatible way (params is available directly, but if used in async components it needs to be awaited. In client components it's a direct prop but sometimes Next throws warnings if used as a promise. Since we're in a client component, we use it directly.)
     const slug = params.category;
     const data = categoryData[slug];
 
@@ -162,7 +161,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
     }
 
     return (
-        <main className="bg-background">
+        <main className="bg-white">
             <Navbar />
             
             {/* Hero Section */}
