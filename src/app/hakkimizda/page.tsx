@@ -54,7 +54,7 @@ export default function HakkimizdaPage() {
                         <span className="stat-title">Müşteri Memnuniyeti</span>
                     </div>
                     <div className="stat-item">
-                        <span className="stat-number">5000+</span>
+                        <span className="stat-number">500+</span>
                         <span className="stat-title">m² Üretim Alanı</span>
                     </div>
                 </div>
@@ -107,14 +107,16 @@ export default function HakkimizdaPage() {
             {/* 6. Video Bölümü */}
             <section className="about-video-section">
                 <div className="video-container">
-                    <video 
-                        src="/assets/Agent_video_Pippit_20260419203700.mp4" 
-                        autoPlay 
-                        muted 
+                    <video
+                        src="https://evdxtjhdysrgnkvjiycq.supabase.co/storage/v1/object/public/video/Agent_video_Pippit_20260419203700.mp4"
+                        autoPlay
+                        muted
                         playsInline
                         controls
                         className="about-video-player"
-                    ></video>
+                    >
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
                 </div>
             </section>
 

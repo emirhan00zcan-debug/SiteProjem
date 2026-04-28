@@ -67,21 +67,21 @@ export default function Home() {
                                 <div className="method-icon"><i className="fas fa-location-dot"></i></div>
                                 <div className="method-text">
                                     <h4>Adres</h4>
-                                    <p>Sinop Küçük Sanayi Sitesi, No: 41, Sinop/Turkiye</p>
+                                    <p>Camikebir mahallesi tütüncü Sokak no 6/A, 57000 Sinop Merkez/Sinop/Turkiye</p>
                                 </div>
                             </div>
                             <div className="method-item">
                                 <div className="method-icon"><i className="fas fa-phone"></i></div>
                                 <div className="method-text">
                                     <h4>Telefon</h4>
-                                    <p>+90 368 261 41 41</p>
+                                    <p>+90 545 898 57 57</p>
                                 </div>
                             </div>
                             <div className="method-item">
                                 <div className="method-icon"><i className="fas fa-envelope"></i></div>
                                 <div className="method-text">
                                     <h4>E-Posta</h4>
-                                    <p>info@ozcanmobilya.com</p>
+                                    <p>ozcan.mobilya.sinop@gmail.com</p>
                                 </div>
                             </div>
                         </div>

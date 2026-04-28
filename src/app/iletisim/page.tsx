@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import LocationsSection from '@/components/LocationsSection';
 
 export default function IletisimPage() {
     return (
@@ -11,73 +12,76 @@ export default function IletisimPage() {
             <main className="min-h-screen">
                 <div className="page-header" style={{ backgroundImage: "url('/assets/images/premium-living.png')", height: '40vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
                     <div className="overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)' }}></div>
-                    <div className="header-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}>
-                        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem' }}>İletişim</h1>
-                        <p style={{ fontSize: '1.2rem', marginTop: '10px' }}>Hayallerinizi Birlikte Tasarlayalım</p>
+                    <div className="header-content reveal-up" style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}>
+                        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 'bold' }}>İletişim</h1>
+                        <p style={{ fontSize: '1.2rem', marginTop: '10px', letterSpacing: '1px' }}>Hayallerinizi Birlikte Tasarlayalım</p>
                     </div>
                 </div>
 
-                <section className="py-20 px-4 md:px-8 bg-white">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                            <div>
-                                <span className="section-subtitle" style={{ color: 'var(--primary-teal)', fontWeight: 600, letterSpacing: '2px' }}>BİZE ULAŞIN</span>
-                                <h2 className="text-4xl md:text-5xl font-playfair mb-8" style={{ color: 'var(--secondary-black)', marginTop: '10px' }}>Sinop Özcan Mobilya</h2>
-                                <p className="text-gray-600 mb-12 text-lg">
-                                    Bölgenin en kapsamlı mobilya üretim ve tasarım merkezi olarak, her türlü sorunuz ve randevu talepleriniz için uzman ekibimizle yanınızdayız.
-                                </p>
+                <LocationsSection />
 
-                                <div className="space-y-8">
-                                    <div className="flex items-start gap-6">
-                                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: 'var(--primary-teal)' }}>
-                                            <i className="fas fa-location-dot text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-lg mb-1" style={{ color: 'var(--secondary-black)' }}>Merkez Mağaza & Showroom</h3>
-                                            <p className="text-gray-500">Kefevi Mah. İstiklal Cad. No:42, Sinop</p>
-                                        </div>
+                <section id="contact" className="contact-premium" style={{ paddingTop: '5rem', paddingBottom: '10rem' }}>
+                    <div className="contact-glass-container">
+                        <div className="contact-info-col reveal-left">
+                            <span className="section-subtitle text-accent">BİZE ULAŞIN</span>
+                            <h2 className="section-heading text-white">Bir Kahve İçmeye <br /> Bekleriz</h2>
+                            <p className="contact-desc">
+                                Hayallerinizdeki projeyi konuşmak için sizi showroomumuza davet ediyoruz.
+                                Profesyonel ekibimizle size en uygun çözümleri birlikte üretelim.
+                            </p>
+
+                            <div className="contact-methods">
+                                <div className="method-item">
+                                    <div className="method-icon"><i className="fas fa-location-dot"></i></div>
+                                    <div className="method-text">
+                                        <h4>Merkez Mağaza & Showroom</h4>
+                                        <p>Camikebir Mahallesi tütüncü sokak no 6/A, Merkez/Sinop</p>
                                     </div>
-                                    <div className="flex items-start gap-6">
-                                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: 'var(--primary-teal)' }}>
-                                            <i className="fas fa-industry text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-lg mb-1" style={{ color: 'var(--secondary-black)' }}>Üretim Tesisi & Atölye</h3>
-                                            <p className="text-gray-500">Sinop Küçük Sanayi Sitesi, 1. Blok No:15-18</p>
-                                        </div>
+                                </div>
+                                <div className="method-item">
+                                    <div className="method-icon"><i className="fas fa-phone"></i></div>
+                                    <div className="method-text">
+                                        <h4>Müşteri Hizmetleri</h4>
+                                        <p>+90 545 898 57 57</p>
                                     </div>
-                                    <div className="flex items-start gap-6">
-                                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: 'var(--primary-teal)' }}>
-                                            <i className="fas fa-phone text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-lg mb-1" style={{ color: 'var(--secondary-black)' }}>Müşteri Hizmetleri</h3>
-                                            <p className="text-gray-500">+90 368 261 41 41</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-6">
-                                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: '#25D366' }}>
-                                            <i className="fab fa-whatsapp text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-lg mb-1" style={{ color: 'var(--secondary-black)' }}>WhatsApp Destek</h3>
-                                            <p className="text-gray-500">+90 545 898 57 57</p>
-                                        </div>
+                                </div>
+                                <div className="method-item">
+                                    <div className="method-icon"><i className="fab fa-whatsapp"></i></div>
+                                    <div className="method-text">
+                                        <h4>WhatsApp Destek</h4>
+                                        <p>+90 545 898 57 57</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-100 bg-white">
-                                <h3 className="text-2xl font-playfair mb-8" style={{ color: 'var(--primary-teal)' }}>İletişim Formu</h3>
-                                <form className="space-y-6" onSubmit={async (e) => {
+                            <div className="social-links-premium">
+                                <a href="https://www.instagram.com/sinop_ozcan_mobilya/" target="_blank" rel="noopener noreferrer" className="social-pill">
+                                    <i className="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://wa.me/905458985757" target="_blank" rel="noopener noreferrer" className="social-pill">
+                                    <i className="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="contact-form-col reveal-right">
+                            <div className="glass-form-card">
+                                <h3>İletişim Formu</h3>
+                                <form onSubmit={async (e) => {
                                     e.preventDefault();
-                                    const formData = new FormData(e.currentTarget);
+                                    const form = e.currentTarget;
+                                    const formData = new FormData(form);
                                     const data = {
                                         name: formData.get('name'),
                                         phone: formData.get('phone'),
                                         email: formData.get('email'),
                                         message: formData.get('message'),
                                     };
+
+                                    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+                                    const originalText = submitBtn.innerHTML;
+                                    submitBtn.innerHTML = 'GÖNDERİLİYOR...';
+                                    submitBtn.disabled = true;
 
                                     try {
                                         const res = await fetch('/api/contact', {
@@ -88,51 +92,35 @@ export default function IletisimPage() {
                                         const result = await res.json();
                                         if (result.success) {
                                             alert('Mesajınız başarıyla iletildi. Teşekkür ederiz.');
-                                            (e.target as HTMLFormElement).reset();
+                                            form.reset();
                                         } else {
                                             alert('Bir hata oluştu: ' + result.error);
                                         }
                                     } catch (err) {
-                                        alert('Bir bağlantı hatası oluştu.');
+                                        alert('Bağlantı hatası.');
+                                    } finally {
+                                        submitBtn.innerHTML = originalText;
+                                        submitBtn.disabled = false;
                                     }
                                 }}>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-medium mb-2 opacity-70">Ad Soyad</label>
-                                            <input name="name" type="text" required className="w-full px-4 py-4 rounded-xl bg-gray-50 border-none focus:ring-2 focus:ring-[#005A64] outline-none transition-all" placeholder="Ahmet Yılmaz" />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-2 opacity-70">Telefon</label>
-                                            <input name="phone" type="tel" required className="w-full px-4 py-4 rounded-xl bg-gray-50 border-none focus:ring-2 focus:ring-[#005A64] outline-none transition-all" placeholder="0555 --- -- --" />
-                                        </div>
+                                    <div className="form-group">
+                                        <input name="name" type="text" placeholder="Adınız Soyadınız" required />
                                     </div>
-                                    <div>
-                                        <label className="block text-sm font-medium mb-2 opacity-70">E-posta</label>
-                                        <input name="email" type="email" required className="w-full px-4 py-4 rounded-xl bg-gray-50 border-none focus:ring-2 focus:ring-[#005A64] outline-none transition-all" placeholder="ahmet@example.com" />
+                                    <div className="form-group" style={{ display: 'flex', gap: '1rem', flexDirection: 'row' }}>
+                                        <input name="phone" type="tel" placeholder="Telefon" required style={{ flex: 1, minWidth: '0' }} />
+                                        <input name="email" type="email" placeholder="E-Posta" required style={{ flex: 1, minWidth: '0' }} />
                                     </div>
-                                    <div>
-                                        <label className="block text-sm font-medium mb-2 opacity-70">Mesajınız</label>
-                                        <textarea name="message" rows={4} required className="w-full px-4 py-4 rounded-xl bg-gray-50 border-none focus:ring-2 focus:ring-[#005A64] outline-none transition-all" placeholder="Projeniz hakkında kısa bir bilgi verin..."></textarea>
+                                    <div className="form-group">
+                                        <textarea name="message" placeholder="Projeniz hakkında kısa bir bilgi verin..." rows={5} required></textarea>
                                     </div>
-                                    <button type="submit" className="w-full py-5 bg-[#005A64] text-white rounded-xl font-bold hover:bg-[#00474F] transition-all transform hover:-translate-y-1 shadow-lg shadow-teal-900/20">
-                                        Mesajı Gönder <i className="fas fa-paper-plane ml-2"></i>
+                                    <button type="submit" className="btn-gold-submit">
+                                        MESAJI GÖNDER <i className="fas fa-paper-plane" style={{ marginLeft: '8px' }}></i>
                                     </button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </section>
-
-                <div className="h-[500px] w-full bg-gray-200 grayscale hover:grayscale-0 transition-all duration-1000">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.0!2d35.15!3d42.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDAxJzM2LjEiTiAzNcKwMDgnNDQuOSJF!5e0!3m2!1str!2str!4v1700000000000"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                    ></iframe>
-                </div>
             </main>
 
             <Footer />
