@@ -42,7 +42,7 @@ export default function IletisimPage() {
                                     <div className="method-icon"><i className="fas fa-phone"></i></div>
                                     <div className="method-text">
                                         <h4>Müşteri Hizmetleri</h4>
-                                        <p>+90 545 898 57 57</p>
+                                        <p><a href="tel:+903682604885" style={{ color: 'inherit', textDecoration: 'none' }}>+90 368 260 48 85</a></p>
                                     </div>
                                 </div>
                                 <div className="method-item">
@@ -65,8 +65,11 @@ export default function IletisimPage() {
                         </div>
 
                         <div className="contact-form-col reveal-right">
-                            <div className="glass-form-card">
-                                <h3>İletişim Formu</h3>
+                            <div className="glass-form-card" style={{ padding: '3.5rem' }}>
+                                <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Proje Talep Formu</h3>
+                                <p style={{ opacity: 0.8, marginBottom: '2.5rem', fontSize: '0.95rem' }}>
+                                    Hayalinizdeki alanı yaratmak için ilk adımı atın. Bize detaylardan bahsedin, en kısa sürede size özel bir planla geri dönelim.
+                                </p>
                                 <form onSubmit={async (e) => {
                                     e.preventDefault();
                                     const form = e.currentTarget;
@@ -75,6 +78,8 @@ export default function IletisimPage() {
                                         name: formData.get('name'),
                                         phone: formData.get('phone'),
                                         email: formData.get('email'),
+                                        category: formData.get('category'),
+                                        contactMethod: formData.get('contactMethod'),
                                         message: formData.get('message'),
                                     };
 
@@ -91,7 +96,7 @@ export default function IletisimPage() {
                                         });
                                         const result = await res.json();
                                         if (result.success) {
-                                            alert('Mesajınız başarıyla iletildi. Teşekkür ederiz.');
+                                            alert('Proje talebiniz başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz.');
                                             form.reset();
                                         } else {
                                             alert('Bir hata oluştu: ' + result.error);
@@ -107,14 +112,35 @@ export default function IletisimPage() {
                                         <input name="name" type="text" placeholder="Adınız Soyadınız" required />
                                     </div>
                                     <div className="form-group" style={{ display: 'flex', gap: '1rem', flexDirection: 'row' }}>
-                                        <input name="phone" type="tel" placeholder="Telefon" required style={{ flex: 1, minWidth: '0' }} />
-                                        <input name="email" type="email" placeholder="E-Posta" required style={{ flex: 1, minWidth: '0' }} />
+                                        <input name="phone" type="tel" placeholder="Telefon Numaranız" required style={{ flex: 1, minWidth: '0' }} />
+                                        <input name="email" type="email" placeholder="E-Posta Adresiniz" required style={{ flex: 1, minWidth: '0' }} />
+                                    </div>
+                                    <div className="form-group" style={{ display: 'flex', gap: '1rem', flexDirection: 'row' }}>
+                                        <select name="category" required style={{ flex: 1, minWidth: '0', appearance: 'none', cursor: 'pointer' }}>
+                                            <option value="" disabled selected>İlgilendiğiniz Kategori</option>
+                                            <option value="Mutfak">Modern Mutfak</option>
+                                            <option value="Banyo">Lüks Banyo</option>
+                                            <option value="Gardırop">Giyinme Odası / Gardırop</option>
+                                            <option value="Ofis">Ofis Mobilyaları</option>
+                                            <option value="Tüm Ev">Komple Ev Projesi</option>
+                                            <option value="Diğer">Diğer Özel Tasarım</option>
+                                        </select>
+                                        <select name="contactMethod" required style={{ flex: 1, minWidth: '0', appearance: 'none', cursor: 'pointer' }}>
+                                            <option value="" disabled selected>Tercih Edilen İletişim</option>
+                                            <option value="Telefon">Telefon ile Aranmak</option>
+                                            <option value="WhatsApp">WhatsApp Üzerinden</option>
+                                            <option value="E-Posta">E-Posta ile</option>
+                                        </select>
                                     </div>
                                     <div className="form-group">
-                                        <textarea name="message" placeholder="Projeniz hakkında kısa bir bilgi verin..." rows={5} required></textarea>
+                                        <textarea name="message" placeholder="Projeniz hakkında detaylı bilgi verin (Ölçüler, tarz tercihleri, özel istekleriniz...)" rows={5} required></textarea>
                                     </div>
-                                    <button type="submit" className="btn-gold-submit">
-                                        MESAJI GÖNDER <i className="fas fa-paper-plane" style={{ marginLeft: '8px' }}></i>
+                                    <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', opacity: 0.8 }}>
+                                        <input type="checkbox" required id="kvkk" style={{ width: 'auto', padding: '0', margin: '0' }} />
+                                        <label htmlFor="kvkk" style={{ cursor: 'pointer' }}>Kişisel Verilerin Korunması (KVKK) metnini okudum ve kabul ediyorum.</label>
+                                    </div>
+                                    <button type="submit" className="btn-gold-submit" style={{ marginTop: '0.5rem' }}>
+                                        PROJE TALEBİNİ GÖNDER <i className="fas fa-paper-plane" style={{ marginLeft: '8px' }}></i>
                                     </button>
                                 </form>
                             </div>

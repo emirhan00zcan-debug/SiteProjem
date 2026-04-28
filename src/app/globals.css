@@ -2438,6 +2438,11 @@ footer {
     transition: all 0.3s ease;
 }
 
+.form-group select option {
+    background-color: #2C3E50;
+    color: #fff;
+}
+
 .form-group input::placeholder, 
 .form-group textarea::placeholder {
     color: rgba(255,255,255,0.4);

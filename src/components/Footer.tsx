@@ -21,7 +21,7 @@ const Footer = () => {
                 <div className="footer-contact">
                     <h4>İletişim</h4>
                     <p><i className="fas fa-location-dot"></i> Sinop, Türkiye</p>
-                    <p><i className="fas fa-phone"></i> +90 368 261 41 41</p>
+                    <p><i className="fas fa-phone"></i> <a href="tel:+903682604885" style={{ color: 'inherit', textDecoration: 'none' }}>+90 368 260 48 85</a></p>
                 </div>
             </div>
             <div className="footer-bottom">

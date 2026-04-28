@@ -151,7 +151,7 @@ export default function KariyerPage() {
                                         </div>
                                         <div>
                                             <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--secondary-black)', marginBottom: '5px' }}>Ön Görüşme ve Bilgi</h4>
-                                            <p style={{ color: 'var(--accent-grey)' }}>+90 368 261 41 41</p>
+                                            <p style={{ color: 'var(--accent-grey)' }}><a href="tel:+903682604885" style={{ color: 'inherit', textDecoration: 'none' }}>+90 368 260 48 85</a></p>
                                         </div>
                                     </div>
                                 </div>

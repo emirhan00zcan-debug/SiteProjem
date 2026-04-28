@@ -53,7 +53,7 @@ const Navbar = () => {
             <div className="top-bar">
                 <div className="top-bar-content">
                     <div className="top-contact">
-                        <span><i className="fas fa-phone"></i> +90 368 261 41 41</span>
+                        <span><i className="fas fa-phone"></i> <a href="tel:+903682604885" style={{ color: 'inherit', textDecoration: 'none' }}>+90 368 260 48 85</a></span>
                         <span><i className="fas fa-envelope"></i> info@ozcanmobilya.com</span>
                     </div>
                     <div className="top-social">
