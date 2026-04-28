@@ -60,6 +60,11 @@
 
 .pd-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: var(--primary-teal); color: #fff; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: var(--transition); box-shadow: 0 10px 20px rgba(0, 90, 100, 0.2); border: none; cursor: pointer; }
 .pd-btn:hover { background: #00454d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 90, 100, 0.3); color: #fff; }
+.pd-cta-group { display: flex; flex-direction: column; gap: 12px; }
+.pd-btn-whatsapp { background: #25d366; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.28); }
+.pd-btn-whatsapp:hover { background: #1eae53; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.35); }
+.pd-btn-instagram { background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 55%, #fcb045 100%); box-shadow: 0 10px 20px rgba(253, 29, 29, 0.22); }
+.pd-btn-instagram:hover { background: linear-gradient(90deg, #6f2f99 0%, #d01717 55%, #dd983b 100%); box-shadow: 0 15px 30px rgba(253, 29, 29, 0.3); }
 
 @media (max-width: 992px) {
     .pd-container { flex-direction: column; gap: 30px; }

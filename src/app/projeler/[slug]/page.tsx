@@ -29,6 +29,12 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   const defaultDesc = "Bu özel üretim proje, mekanınızın ruhuna uygun, modern ve fonksiyonel bir yaklaşım ile tasarlanmıştır. Her detayı özenle düşünülmüş, kaliteli işçilik ön planda tutulmuştur.";
   const fallbackMaterial = project.category === 'mutfak' ? 'MDF Lam gövde, Akrilik/Lake kapak, Çimstone tezgah' : '1. Sınıf MDF, Hafele donanım, gizli aydınlatma detayları';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ozcanmobilya.com';
+  const projectUrl = `${siteUrl}/projeler/${project.slug || project.id}`;
+  const inquiryMessage = `Merhaba, bu modelinizle ilgili fiyat almak istiyorum. Model linki: ${projectUrl}`;
+  const encodedInquiryMessage = encodeURIComponent(inquiryMessage);
+  const whatsappUrl = `https://wa.me/905458985757?text=${encodedInquiryMessage}`;
+  const instagramUrl = `https://ig.me/m/sinop_ozcan_mobilya?text=${encodedInquiryMessage}`;
 
   return (
     <>
@@ -97,9 +103,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             </div>
 
             {/* CTA */}
-            <Link href="/iletisim" className="pd-btn">
-              <i className="fas fa-phone-alt"></i> Ücretsiz Keşif & Teklif Alın
-            </Link>
+            <div className="pd-cta-group">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="pd-btn pd-btn-whatsapp">
+                <i className="fab fa-whatsapp"></i> WhatsApp'tan Ücretsiz Teklif Al
+              </a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="pd-btn pd-btn-instagram">
+                <i className="fab fa-instagram"></i> Instagram'dan Ücretsiz Teklif Al
+              </a>
+            </div>
 
           </div>
         </div>
