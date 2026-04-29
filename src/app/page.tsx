@@ -56,7 +56,7 @@ export default function Home() {
                 <div className="contact-glass-container">
                     <div className="contact-info-col">
                         <span className="section-subtitle text-accent">İLETİŞİM</span>
-                        <h2 className="section-heading text-white">Bir Kahve İçmeye <br /> Bekleriz</h2>
+                        <h2 className="section-heading" style={{ color: '#D4AF37' }}>Bir Kahve İçmeye <br /> Bekleriz</h2>
                         <p className="contact-desc">
                             Hayallerinizdeki projeyi konuşmak için sizi showroomumuza davet ediyoruz.
                             Profesyonel ekibimizle size en uygun çözümleri birlikte üretelim.
