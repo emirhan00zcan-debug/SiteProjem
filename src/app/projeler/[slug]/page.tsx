@@ -29,12 +29,19 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   const defaultDesc = "Bu özel üretim proje, mekanınızın ruhuna uygun, modern ve fonksiyonel bir yaklaşım ile tasarlanmıştır. Her detayı özenle düşünülmüş, kaliteli işçilik ön planda tutulmuştur.";
   const fallbackMaterial = project.category === 'mutfak' ? 'MDF Lam gövde, Akrilik/Lake kapak, Çimstone tezgah' : '1. Sınıf MDF, Hafele donanım, gizli aydınlatma detayları';
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ozcanmobilya.com';
+  const rawSiteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.NEXT_PUBLIC_VERCEL_URL ||
+    process.env.VERCEL_URL ||
+    'https://ozcanmobilya.vercel.app';
+  const siteUrl = rawSiteUrl.startsWith('http') ? rawSiteUrl : `https://${rawSiteUrl}`;
   const projectUrl = `${siteUrl}/projeler/${project.slug || project.id}`;
   const inquiryMessage = `Merhaba, bu modelinizle ilgili fiyat almak istiyorum. Model linki: ${projectUrl}`;
+  const instagramMessage = `Merhaba, ${project.title} modeli icin fiyat alabilir miyim? Link: ${projectUrl}`;
   const encodedInquiryMessage = encodeURIComponent(inquiryMessage);
+  const encodedInstagramMessage = encodeURIComponent(instagramMessage);
   const whatsappUrl = `https://wa.me/905458985757?text=${encodedInquiryMessage}`;
-  const instagramUrl = `https://ig.me/m/sinop_ozcan_mobilya?text=${encodedInquiryMessage}`;
+  const instagramUrl = `https://ig.me/m/sinop_ozcan_mobilya?text=${encodedInstagramMessage}`;
 
   return (
     <>

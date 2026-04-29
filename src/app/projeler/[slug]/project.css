@@ -37,7 +37,7 @@
 .measurement-header i { color: var(--primary-teal); }
 .measurement-inputs { display: flex; gap: 15px; }
 .input-group { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-.input-group label { font-size: 0.75rem; text-transform: uppercase; color: var(--accent-grey); font-weight: 700; letter-spacing: 0.5px; }
+.input-group label { font-size: 0.75rem; text-transform: uppercase; color: var(--accent-grey); font-weight: 700; letter-spacing: 0.5px; min-height: 2.2em; display: flex; align-items: flex-end; }
 .input-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; transition: all 0.3s; font-size: 0.95rem; }
 .input-group input:focus { border-color: var(--primary-teal); box-shadow: 0 0 0 3px rgba(0, 90, 100, 0.1); }
 .input-group input::-webkit-outer-spin-button, .input-group input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -67,12 +67,68 @@
 .pd-btn-instagram:hover { background: linear-gradient(90deg, #6f2f99 0%, #d01717 55%, #dd983b 100%); box-shadow: 0 15px 30px rgba(253, 29, 29, 0.3); }
 
 @media (max-width: 992px) {
-    .pd-container { flex-direction: column; gap: 30px; }
+    .pd-wrapper { padding: 2.5rem 0; }
+    .pd-container { flex-direction: column; gap: 24px; padding: 0 4%; }
     .pd-left { flex: 100%; max-width: 100%; width: 100%; }
-    .pd-right { flex: 100%; max-width: 100%; width: 100%; position: static; }
+    .pd-right { flex: 100%; max-width: 100%; width: 100%; position: static; gap: 20px; }
+    .pd-breadcrumb { margin-bottom: 1.25rem; font-size: 0.72rem; gap: 8px; letter-spacing: 0.6px; flex-wrap: wrap; }
     .pd-gallery-wrapper { flex-direction: column-reverse; height: auto; }
-    .pd-thumbnails { flex-direction: row; width: 100%; overflow-x: auto; overflow-y: hidden; }
+    .pd-thumbnails { flex-direction: row; width: 100%; overflow-x: auto; overflow-y: hidden; gap: 10px; }
     .pd-thumb-btn { width: 70px; height: 70px; }
-    .pd-main-img { height: 400px; }
-    .pd-title { font-size: 2.2rem; }
+    .pd-main-img { height: 360px; padding: 14px; }
+    .pd-title { font-size: 2rem; }
+    .pd-desc { font-size: 0.98rem; line-height: 1.65; margin-bottom: 18px; }
+    .pd-price-box, .pd-specs { padding: 22px; border-radius: 14px; }
+    .pd-price-val { font-size: 2.2rem; }
+    .pd-spec-item { gap: 14px; margin-bottom: 18px; }
+    .pd-spec-icon { width: 42px; height: 42px; font-size: 1.2rem; }
+    .pd-btn { padding: 15px; font-size: 1rem; }
+}
+
+@media (max-width: 576px) {
+    .pd-wrapper { padding: 1.75rem 0; }
+    .pd-container { padding: 0 14px; gap: 18px; }
+    .pd-breadcrumb { font-size: 0.68rem; margin-bottom: 0.9rem; }
+    .pd-gallery-wrapper { gap: 12px; }
+    .pd-main-img { height: 260px; padding: 10px; border-radius: 10px; }
+    .pd-thumbnails { gap: 8px; }
+    .pd-thumb-btn { width: 58px; height: 58px; padding: 4px; }
+    .pd-label { left: 10px; bottom: 10px; font-size: 0.68rem; padding: 5px 10px; letter-spacing: 0.6px; }
+    .pd-title { font-size: 1.45rem; line-height: 1.25; margin-bottom: 8px; }
+    .pd-code { margin-bottom: 14px; }
+    .pd-desc { font-size: 0.92rem; line-height: 1.6; margin-bottom: 14px; }
+    .pd-measurements-interactive { padding: 16px; margin-bottom: 16px; border-radius: 10px; }
+    .measurement-header { font-size: 0.92rem; margin-bottom: 10px; }
+    .measurement-inputs { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .input-group label { min-height: auto; align-items: flex-start; }
+    .input-group input { padding: 11px; font-size: 0.92rem; }
+    .pd-price-box, .pd-specs { padding: 16px; border-radius: 12px; }
+    .pd-price-title { font-size: 0.72rem; margin-bottom: 6px; }
+    .pd-price-val { font-size: 1.72rem; gap: 6px; flex-wrap: wrap; }
+    .pd-price-val span { font-size: 0.86rem; }
+    .pd-price-example { margin-top: 12px; padding: 10px 12px; }
+    .pd-price-example-val { font-size: 1.15rem; }
+    .pd-specs-title { font-size: 0.78rem; letter-spacing: 1px; margin-bottom: 14px; }
+    .pd-spec-item { flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .pd-spec-content h4 { font-size: 0.98rem; }
+    .pd-spec-content p { font-size: 0.86rem; line-height: 1.45; }
+    .pd-cta-group { gap: 10px; }
+    .pd-btn { padding: 13px; font-size: 0.95rem; border-radius: 10px; }
+}
+
+@media (max-width: 390px) {
+    .pd-container { padding: 0 10px; }
+    .pd-main-img { height: 230px; }
+    .pd-thumb-btn { width: 52px; height: 52px; }
+    .pd-title { font-size: 1.28rem; }
+    .pd-desc { font-size: 0.88rem; }
+    .measurement-header { font-size: 0.86rem; }
+    .input-group label { font-size: 0.7rem; }
+    .input-group input { padding: 10px; font-size: 0.88rem; }
+    .pd-price-val { font-size: 1.52rem; }
+    .pd-price-example-title { font-size: 0.68rem; }
+    .pd-price-example-val { font-size: 1.05rem; }
+    .pd-spec-content h4 { font-size: 0.92rem; }
+    .pd-spec-content p { font-size: 0.82rem; }
+    .pd-btn { font-size: 0.88rem; padding: 12px; }
 }
